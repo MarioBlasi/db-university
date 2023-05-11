@@ -81,8 +81,8 @@
 
 | Appelli di Esame: id_appello (int, chiave primaria), data_appello (date), id_corso (int, chiave esterna verso Corsi)
 
-Studenti: id_studente (int, chiave primaria), nome_studente (varchar), cognome_studente (varchar), id_corso_laurea (int, chiave esterna verso Corsi di Laurea)
+| Studenti: id_studente (int, chiave primaria), nome_studente (varchar), cognome_studente (varchar), id_corso_laurea (int, chiave esterna verso Corsi di Laurea)
 
-Iscrizioni: id_iscrizione (int, chiave primaria), id_studente (int, chiave esterna verso Studenti), id_appello (int, chiave esterna verso Appelli di Esame)
+| Iscrizioni: id_iscrizione (int, chiave primaria), id_studente (int, chiave esterna verso Studenti), id_appello (int, chiave esterna verso Appelli di Esame)
 
-Esami: id_esame (int, chiave primaria), voto (int), id_iscrizione (int, chiave esterna verso Iscrizioni)
+| Esami: id_esame (int, chiave primaria), voto (int), id_iscrizione (int, chiave esterna verso Iscrizioni)
