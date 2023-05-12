@@ -9,11 +9,12 @@
 7. Da quanti dipartimenti è composta l'università? (12)
 8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
 
-SELECT `departments`.`id`, `courses`.`degree_id`, `teachers`.`id`, `course_teacher`.`teacher_id`, `students`.`id`, `exams`.`course_id`, `exam_student`.`exam_id`
-FROM `departments`
-, `courses`
-, `teachers`
-LEFT JOIN `course_teacher` ON `course_teacher`.`course_id` = `courses`.`id`
-, `students`
-LEFT JOIN `exams` ON `exams`.`course_id` = `courses`.`id`
-LEFT JOIN `exam_student` ON `exam_student`.`exam_id` = `exams`.`id`;
+9. SELECT `departments`.`id`, `students`.`date_of_birth`, `courses`.`cfu`, `courses`.`period`, `exams`.`hour`, `teachers`.`phone`, `courses`.`degree_id`, `departments`.`head_of_department`
+   FROM `departments`
+   , `students`
+   , `courses`
+   LEFT JOIN `exams` ON `exams`.`course_id` = `courses`.`id`
+   , `teachers`
+   WHERE YEAR(students.date_of_birth) = 1990;
+
+10.
