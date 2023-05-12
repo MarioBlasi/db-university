@@ -9,12 +9,18 @@
 7. Da quanti dipartimenti è composta l'università? (12)
 8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
 
-9. SELECT `departments`.`id`, `students`.`date_of_birth`, `courses`.`cfu`, `courses`.`period`, `exams`.`hour`, `teachers`.`phone`, `courses`.`degree_id`, `departments`.`head_of_department`
-   FROM `departments`
-   , `students`
-   , `courses`
-   LEFT JOIN `exams` ON `exams`.`course_id` = `courses`.`id`
-   , `teachers`
-   WHERE YEAR(students.date_of_birth) = 1990;
+9. Selezionare tutti gli studenti nati nel 1990 (160):
 
-10.
+mysql> SELECT \* FROM students WHERE YEAR(date_of_birth) = 1990;
+
+2. Selezionare tutti i corsi che valgono più di 10 crediti (479):
+
+3. Selezionare tutti gli studenti che hanno più di 30 anni
+   mysql> SELECT \*
+   -> FROM `students`
+   -> WHERE DATE_FORMAT(NOW(), '%Y') - DATE_FORMAT(birthdate, '%Y')
+   -> LIKE ">30";
+   ERROR 1054 (42S22): Unknown column 'birthdate' in 'where clause'
+   mysql>
+4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di
+   laurea (286)
