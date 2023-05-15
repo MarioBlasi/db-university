@@ -38,6 +38,13 @@
 
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
 
-   7. BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per
-      superare ciascuno dei suoi esami
-      \*/
+   SELECT `teachers`.\*
+   FROM `teachers`
+   JOIN `course_teacher` ON `teachers`.`id`=`course_teacher`.`teacher_id`
+   JOIN `courses` ON `course_teacher`.`course_id`=`courses`.`id`
+   JOIN `degrees` ON `courses`.`degree_id`=`degrees`.`id`
+   WHERE `degrees`.`name`='Corso di Laurea in Matematica';
+
+7. BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per
+   superare ciascuno dei suoi esami
+   \*/
